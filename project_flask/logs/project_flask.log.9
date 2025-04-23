@@ -1,0 +1,17 @@
+2025-04-15 17:56:53,278 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 192, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined

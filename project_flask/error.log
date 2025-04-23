@@ -1,0 +1,102 @@
+[2025-04-22 19:28:57 +0300] [3284420] [INFO] Handling signal: term
+[2025-04-22 19:28:57 +0300] [3284421] [INFO] Worker exiting (pid: 3284421)
+[2025-04-22 19:28:57 +0300] [3284422] [INFO] Worker exiting (pid: 3284422)
+[2025-04-22 19:28:57 +0300] [3284423] [INFO] Worker exiting (pid: 3284423)
+[2025-04-22 19:28:57 +0300] [3284420] [INFO] Shutting down: Master
+[2025-04-22 19:28:59 +0300] [3289712] [INFO] Starting gunicorn 22.0.0
+[2025-04-22 19:28:59 +0300] [3289712] [INFO] Listening at: unix:/var/www/project_flask/ipc.sock (3289712)
+[2025-04-22 19:28:59 +0300] [3289712] [INFO] Using worker: sync
+[2025-04-22 19:28:59 +0300] [3289713] [INFO] Booting worker with pid: 3289713
+[2025-04-22 19:28:59 +0300] [3289714] [INFO] Booting worker with pid: 3289714
+[2025-04-22 19:28:59 +0300] [3289715] [INFO] Booting worker with pid: 3289715
+[2025-04-22 19:29:01,077] INFO in __init__: project_flask startup
+[2025-04-22 19:29:01,152] INFO in __init__: project_flask startup
+[2025-04-22 19:29:01,170] INFO in __init__: project_flask startup
+[2025-04-22 19:41:42,201] ERROR in app: Exception on /auth/reset_password_request [POST]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 7, in send_password_reset_email
+    reset_link = url_for('auth.reset_password', token=token, _external=True)
+NameError: name 'url_for' is not defined
+[2025-04-22 19:48:15 +0300] [3289712] [INFO] Handling signal: term
+[2025-04-22 19:48:15 +0300] [3289715] [INFO] Worker exiting (pid: 3289715)
+[2025-04-22 19:48:15 +0300] [3289713] [INFO] Worker exiting (pid: 3289713)
+[2025-04-22 19:48:15 +0300] [3289714] [INFO] Worker exiting (pid: 3289714)
+[2025-04-22 19:48:15 +0300] [3289712] [INFO] Shutting down: Master
+[2025-04-22 19:48:18 +0300] [3289955] [INFO] Starting gunicorn 22.0.0
+[2025-04-22 19:48:18 +0300] [3289955] [INFO] Listening at: unix:/var/www/project_flask/ipc.sock (3289955)
+[2025-04-22 19:48:18 +0300] [3289955] [INFO] Using worker: sync
+[2025-04-22 19:48:18 +0300] [3289956] [INFO] Booting worker with pid: 3289956
+[2025-04-22 19:48:18 +0300] [3289957] [INFO] Booting worker with pid: 3289957
+[2025-04-22 19:48:18 +0300] [3289958] [INFO] Booting worker with pid: 3289958
+[2025-04-22 19:48:19,613] INFO in __init__: project_flask startup
+[2025-04-22 19:48:19,666] INFO in __init__: project_flask startup
+[2025-04-22 19:48:19,818] INFO in __init__: project_flask startup
+[2025-04-23 08:53:47 +0300] [3289955] [INFO] Handling signal: term
+[2025-04-23 08:53:47 +0300] [3289956] [INFO] Worker exiting (pid: 3289956)
+[2025-04-23 08:53:47 +0300] [3289957] [INFO] Worker exiting (pid: 3289957)
+[2025-04-23 08:53:47 +0300] [3289958] [INFO] Worker exiting (pid: 3289958)
+[2025-04-23 08:53:48 +0300] [3289955] [INFO] Shutting down: Master
+[2025-04-23 08:53:49 +0300] [3295633] [INFO] Starting gunicorn 22.0.0
+[2025-04-23 08:53:49 +0300] [3295633] [INFO] Listening at: unix:/var/www/project_flask/ipc.sock (3295633)
+[2025-04-23 08:53:49 +0300] [3295633] [INFO] Using worker: sync
+[2025-04-23 08:53:49 +0300] [3295634] [INFO] Booting worker with pid: 3295634
+[2025-04-23 08:53:50 +0300] [3295635] [INFO] Booting worker with pid: 3295635
+[2025-04-23 08:53:50 +0300] [3295636] [INFO] Booting worker with pid: 3295636
+[2025-04-23 08:53:51,656] INFO in __init__: project_flask startup
+[2025-04-23 08:53:51,684] INFO in __init__: project_flask startup
+[2025-04-23 08:53:51,685] INFO in __init__: project_flask startup
+[2025-04-23 08:54:16,098] ERROR in app: Exception on /auth/reset_password_request [POST]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 7, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 191, in get_reset_password_token
+    s = URLSafeTimedSerializer(current_app.config['SECRET_KEY'])
+NameError: name 'URLSafeTimedSerializer' is not defined
+[2025-04-23 08:57:05 +0300] [3295633] [INFO] Handling signal: term
+[2025-04-23 08:57:05 +0300] [3295634] [INFO] Worker exiting (pid: 3295634)
+[2025-04-23 08:57:05 +0300] [3295635] [INFO] Worker exiting (pid: 3295635)
+[2025-04-23 08:57:05 +0300] [3295636] [INFO] Worker exiting (pid: 3295636)
+[2025-04-23 08:57:05 +0300] [3295633] [INFO] Shutting down: Master
+[2025-04-23 08:57:08 +0300] [3295664] [INFO] Starting gunicorn 22.0.0
+[2025-04-23 08:57:08 +0300] [3295664] [INFO] Listening at: unix:/var/www/project_flask/ipc.sock (3295664)
+[2025-04-23 08:57:08 +0300] [3295664] [INFO] Using worker: sync
+[2025-04-23 08:57:08 +0300] [3295665] [INFO] Booting worker with pid: 3295665
+[2025-04-23 08:57:08 +0300] [3295666] [INFO] Booting worker with pid: 3295666
+[2025-04-23 08:57:08 +0300] [3295667] [INFO] Booting worker with pid: 3295667
+[2025-04-23 08:57:09,402] INFO in __init__: project_flask startup
+[2025-04-23 08:57:09,442] INFO in __init__: project_flask startup
+[2025-04-23 08:57:09,465] INFO in __init__: project_flask startup
+[2025-04-23 10:18:46 +0300] [3295664] [INFO] Handling signal: term
+[2025-04-23 10:18:46 +0300] [3295665] [INFO] Worker exiting (pid: 3295665)
+[2025-04-23 10:18:46 +0300] [3295666] [INFO] Worker exiting (pid: 3295666)
+[2025-04-23 10:18:46 +0300] [3295667] [INFO] Worker exiting (pid: 3295667)
+[2025-04-23 10:18:46 +0300] [3295664] [INFO] Shutting down: Master
+[2025-04-23 10:18:49 +0300] [3296649] [INFO] Starting gunicorn 22.0.0
+[2025-04-23 10:18:49 +0300] [3296649] [INFO] Listening at: unix:/var/www/project_flask/ipc.sock (3296649)
+[2025-04-23 10:18:49 +0300] [3296649] [INFO] Using worker: sync
+[2025-04-23 10:18:49 +0300] [3296650] [INFO] Booting worker with pid: 3296650
+[2025-04-23 10:18:49 +0300] [3296651] [INFO] Booting worker with pid: 3296651
+[2025-04-23 10:18:49 +0300] [3296652] [INFO] Booting worker with pid: 3296652
+[2025-04-23 10:18:50,858] INFO in __init__: project_flask startup
+[2025-04-23 10:18:50,903] INFO in __init__: project_flask startup
+[2025-04-23 10:18:50,942] INFO in __init__: project_flask startup

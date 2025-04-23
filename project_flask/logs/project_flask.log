@@ -1,0 +1,108 @@
+2025-04-21 17:15:31,570 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 12, in send_password_reset_email
+    html_body=render_template('email/reset_password.html',
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jinja2/environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/var/www/project_flask/app/templates/email/reset_password.html", line 12, in top-level template code
+    <p>{{ url_for('reset_password', token=token, _external=True) }}</p>
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1084, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1073, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password' with values ['token']. Did you mean 'auth.reset_password' instead?
+2025-04-21 17:47:05,946 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 17:47:06,033 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 17:47:06,083 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:02:08,519 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:02:08,601 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:02:08,700 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:07:30,237 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:07:30,495 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 18:07:30,526 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 20:06:24,709 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 20:06:24,782 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 20:06:24,801 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:33,668 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:33,747 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:33,790 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:52,098 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:52,192 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 21:07:52,284 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:08:55,344 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:08:55,395 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:08:55,397 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:32:48,739 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:32:48,885 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 09:32:48,898 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:27,241 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:27,283 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:27,312 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:41,897 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:42,014 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 10:18:42,056 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:29:01,077 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:29:01,152 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:29:01,170 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:41:42,201 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 7, in send_password_reset_email
+    reset_link = url_for('auth.reset_password', token=token, _external=True)
+NameError: name 'url_for' is not defined
+2025-04-22 19:48:19,613 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:48:19,666 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-22 19:48:19,818 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:53:51,656 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:53:51,684 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:53:51,685 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:54:16,098 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 7, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 191, in get_reset_password_token
+    s = URLSafeTimedSerializer(current_app.config['SECRET_KEY'])
+NameError: name 'URLSafeTimedSerializer' is not defined
+2025-04-23 08:57:09,402 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:57:09,442 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 08:57:09,465 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 10:18:50,858 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 10:18:50,903 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-23 10:18:50,942 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]

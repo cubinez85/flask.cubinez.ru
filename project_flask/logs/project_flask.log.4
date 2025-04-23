@@ -1,0 +1,96 @@
+2025-04-16 18:29:26,572 ERROR: Exception on /search [GET] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/var/www/project_flask/app/main/routes.py", line 199, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "/var/www/project_flask/app/models.py", line 23, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/var/www/project_flask/app/search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/utils.py", line 446, in wrapped
+    return api(*args, **kwargs)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/__init__.py", line 4119, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 316, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.TlsError: TLS error caused by: TlsError(TLS error caused by: SSLError([Errno 13] Permission denied))
+2025-04-21 08:21:04,679 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 08:21:04,717 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 08:21:04,748 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:93]
+2025-04-21 08:21:32,094 ERROR: Exception on /search [GET] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/var/www/project_flask/app/main/routes.py", line 199, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "/var/www/project_flask/app/models.py", line 24, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/var/www/project_flask/app/search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/utils.py", line 446, in wrapped
+    return api(*args, **kwargs)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/__init__.py", line 4119, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 316, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.TlsError: TLS error caused by: TlsError(TLS error caused by: SSLError([Errno 13] Permission denied))
+2025-04-21 08:21:39,848 ERROR: Exception on /search [GET] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/var/www/project_flask/app/main/routes.py", line 199, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "/var/www/project_flask/app/models.py", line 24, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/var/www/project_flask/app/search.py", line 19, in query_index
+    search = current_app.elasticsearch.search(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/utils.py", line 446, in wrapped
+    return api(*args, **kwargs)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/__init__.py", line 4119, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 271, in perform_request
+    response = self._perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elasticsearch/_sync/client/_base.py", line 316, in _perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.TlsError: TLS error caused by: TlsError(TLS error caused by: SSLError([Errno 13] Permission denied))

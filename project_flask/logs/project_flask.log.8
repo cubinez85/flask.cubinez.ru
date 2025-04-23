@@ -1,0 +1,123 @@
+2025-04-15 18:02:00,895 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 192, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined
+2025-04-15 18:03:48,575 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 192, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined
+2025-04-15 18:15:30,788 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:15:30,794 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:15:30,796 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:17:16,035 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 192, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined
+2025-04-15 18:17:29,184 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 192, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined
+2025-04-15 18:28:30,124 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:28:30,150 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:28:30,204 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:28:56,895 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 191, in get_reset_password_token
+    return jwt.encode(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jwt/algorithms.py", line 265, in prepare_key
+    key_bytes = force_bytes(key)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/jwt/utils.py", line 22, in force_bytes
+    raise TypeError("Expected a string value")
+TypeError: Expected a string value
+2025-04-15 18:31:26,076 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:31:26,086 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:31:26,275 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:32:23,537 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:32:23,593 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:32:23,650 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]
+2025-04-15 18:32:58,204 ERROR: Exception on /auth/reset_password_request [POST] [in /var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py:838]
+Traceback (most recent call last):
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/project_flask/venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/var/www/project_flask/app/auth/routes.py", line 64, in reset_password_request
+    send_password_reset_email(user)
+  File "/var/www/project_flask/app/auth/email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/var/www/project_flask/app/models.py", line 193, in get_reset_password_token
+    app.config['SECRET_KEY'], algorithm='HS256')
+NameError: name 'app' is not defined
+2025-04-15 19:24:53,826 INFO: project_flask startup [in /var/www/project_flask/app/__init__.py:98]

@@ -1,0 +1,13 @@
+ http POST https://www.flask.cubinez.ru/api/users username=cubinez85 password=123 \
+> email=cubinez85@mail.ru "about_me=Hello, I'm programmer!"
+
+http --auth cubinez85:123 POST http://www.flask.cubinez.ru/api/tokens
+
+http -A bearer --auth cdc46ad9d0bf632db40ca943de2875cf PUT https://www.flask.cubinez.ru/api/users/1 "about_me=Hi, I am cubinez85!"
+
+
+http -A bearer --auth f2292e79c5e2cba80695a181a4bb70bb GET https://www.flask.cubinez.ru/api/users/1
+
+
+http -A bearer --auth cdc46ad9d0bf632db40ca943de2875cf DELETE https://www.flask.cubinez.ru/api/tokens
+
