@@ -1,0 +1,86 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                <img src="{{ post.author.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            {% set user_link %}
+                <a class="user_popup" href="{{ url_for('main.user', username=post.author.username) }}">
+                    {{ post.author.username }}
+                </a>
+            {% endset %}
+            {{ _('%(username)s said %(when)s',
+                username=user_link, when=moment(post.timestamp).fromNow()) }}
+            <br>
+            <span id="post{{ post.id }}">{{ post.body }}</span>
+
+            <!-- Отображение вложенного файла - ИСПРАВЛЕННАЯ ВЕРСИЯ -->
+            {% if post.has_file() %}
+            <div class="attachment-preview mt-2">
+                <div class="message-attachment">
+                    <span class="file-icon">{{ get_file_icon(post.filename) }}</span>
+                    <div class="file-details">
+                        <!-- ОСНОВНАЯ ССЫЛКА ДЛЯ СКАЧИВАНИЯ -->
+                        <a href="{{ url_for('main.download_post_file', post_id=post.id) }}"
+                           class="file-link d-block"
+                           title="{{ _('Download: %(filename)s', filename=post.filename) }}"
+                           download="{{ post.filename.split('_', 1)[1] if '_' in post.filename else post.filename }}">
+                            <strong>{{ post.filename.split('_', 1)[1] if '_' in post.filename else post.filename }}</strong>
+                        </a>
+                        <small class="text-muted">
+                            {{ (post.file_size / 1024)|round(1) }} KB •
+                            {{ post.file_mimetype or 'File' }}
+                        </small>
+                    </div>
+
+                    <!-- Предпросмотр для изображений - ОТДЕЛЬНАЯ ССЫЛКА ДЛЯ ПРОСМОТРА -->
+                    {% if post.file_mimetype and post.file_mimetype.startswith('image/') %}
+                    <div class="image-preview mt-2">
+                        <a href="{{ url_for('main.download_post_file', post_id=post.id) }}?action=view"
+                           target="_blank"
+                           title="{{ _('View full size: %(filename)s', filename=post.filename) }}">
+                            <img src="{{ url_for('main.download_post_file', post_id=post.id) }}"
+                                 alt="{{ post.filename }}"
+                                 style="max-width: 300px; max-height: 300px; cursor: pointer;"
+                                 class="img-thumbnail">
+                        </a>
+                        <div class="mt-1 small text-muted">
+                            <i class="fas fa-external-link-alt"></i>
+                            {{ _('Click image to view full size') }}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+
+<!-- Макрос для определения иконки файла -->
+{% macro get_file_icon(filename) %}
+    {% set ext = filename.split('.')[-1].lower() if '.' in filename else '' %}
+    {% if ext in ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'] %}
+        🖼️
+    {% elif ext in ['pdf'] %}
+        📄
+    {% elif ext in ['doc', 'docx'] %}
+        📝
+    {% elif ext in ['xls', 'xlsx', 'xlsm', 'xlsb', 'csv'] %}  
+        📊
+    {% elif ext in ['txt', 'rtf'] %}
+        📄
+    {% elif ext in ['zip', 'rar', '7z', 'tar', 'gz'] %}
+        📦
+    {% elif ext in ['mp3', 'wav', 'flac', 'ogg', 'aac'] %}
+        🎵
+    {% elif ext in ['mp4', 'avi', 'mov', 'mkv', 'wmv', 'flv'] %}
+        🎬
+    {% elif ext in ['ppt', 'pptx'] %}
+        📊
+    {% else %}
+        📎
+    {% endif %}
+{% endmacro %}

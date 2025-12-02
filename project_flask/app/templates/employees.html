@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Список сотрудников</h1>
+    
+    {% if employees %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Должность</th>
+                    <th>ID руководителя</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td><strong>{{ employee.name }}</strong></td>
+                    <td>{{ employee.position }}</td>
+                    <td>
+                        {% if employee.parent %}
+                            {{ employee.parent }}
+                        {% else %}
+                            <span class="text-muted">-</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="alert alert-info">
+        Всего сотрудников: <strong>{{ employees|length }}</strong>
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+        <h4>Нет данных о сотрудниках</h4>
+        <p>База данных сотрудников пуста.</p>
+    </div>
+    {% endif %}
+    
+    <div class="mt-4">
+        <a href="{{ url_for('main.hierarchy') }}" class="btn btn-primary me-2">
+            📊 Посмотреть иерархию
+        </a>
+        <a href="{{ url_for('main.index') }}" class="btn btn-secondary">
+            🏠 На главную
+        </a>
+    </div>
+</div>
+{% endblock %}

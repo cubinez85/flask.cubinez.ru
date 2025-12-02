@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+    <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
+    
+    {% if form %}
+    <div class="row">
+        <div class="col-md-8">
+            <form id="post-form" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                
+                <div class="form-group mb-3">
+                    {{ form.post.label(class="form-label") }}
+                    {{ form.post(class="form-control", rows=3, placeholder=_("What's on your mind?")) }}
+                    {% for error in form.post.errors %}
+                        <div class="text-danger small mt-1">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Поле для прикрепления файла -->
+                <div class="form-group mb-3">
+                    <label for="attachment" class="attachment-icon" title="{{ _('Attach file') }}">
+                        📎 {{ _('Attach file') }}
+                    </label>
+                    <input type="file" class="form-control-file file-input-hidden" 
+                           id="attachment" name="attachment" 
+                           accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.txt,.zip,.mp3,.wav,.mp4,.avi,.mov,.rar,.7z,.xls,.xlsx,.xlsm,.xlsb,.csv">
+                    
+                    <div id="file-preview" class="file-preview" style="display: none;">
+                        <div class="file-info">
+                            <span id="file-name" class="file-name"></span>
+                            <span id="file-size" class="file-size"></span>
+                        </div>
+                        <button type="button" class="file-remove-btn" onclick="removeFile('post-form')" title="{{ _('Remove file') }}">
+                            ×
+                        </button>
+                    </div>
+                    
+                    <small class="form-text text-muted">
+                        {{ _('Supported formats: images, documents, archives, audio, video. Max size: 10MB') }}
+                    </small>
+                    
+                    {% for error in form.attachment.errors %}
+                        <div class="text-danger small mt-1">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    {% endif %}
+    
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+    
+    <nav aria-label="Post navigation">
+        <ul class="pagination">
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ prev_url }}">
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                </a>
+            </li>
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ next_url }}">
+                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+    // Инициализация функциональности файлов для этой страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        setupFileAttachment('post-form');
+    });
+    </script>
+{% endblock %}

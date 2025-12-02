@@ -1,0 +1,25 @@
+ <BODY bgcolor="DeepSkyBlue">
+ <table border="1" cellpadding="5" cellspacing="5">
+     <thead>
+     <tr>
+         {% for i in labels %}
+             <td>{{ i }}</td>
+         {% endfor %}
+      </tr>
+      </thead>
+      <tbody>
+      {% for i in content %}
+          <tr>
+              {% for j in i %}
+                  <td>{{ j }}</td>
+              {% endfor %}
+          </tr>
+      {% endfor %}
+      </tbody>
+ </table>
+
+
+
+
+
+

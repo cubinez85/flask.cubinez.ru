@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Error Notification - {{ error_details.error|truncate(50) }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #dc3545; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .section { background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        .section h2 { margin-top: 0; color: #495057; border-bottom: 1px solid #dee2e6; padding-bottom: 5px; }
+        pre { background-color: #e9ecef; padding: 10px; border-radius: 5px; overflow: auto; font-size: 12px; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info { color: #17a2b8; }
+        .timestamp { color: #6c757d; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; }
+        td, th { padding: 8px; text-align: left; border-bottom: 1px solid #dee2e6; }
+        th { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚨 Error Notification</h1>
+        <p class="timestamp">Time: {{ error_details.time }}</p>
+    </div>
+    
+    <div class="section">
+        <h2>Error Details</h2>
+        <table>
+            <tr>
+                <th>Error:</th>
+                <td class="error">{{ error_details.error }}</td>
+            </tr>
+            <tr>
+                <th>Time:</th>
+                <td>{{ error_details.time }}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>{{ error_details.url }}</td>
+            </tr>
+            <tr>
+                <th>Method:</th>
+                <td>{{ error_details.method }}</td>
+            </tr>
+            <tr>
+                <th>IP Address:</th>
+                <td>{{ error_details.ip }}</td>
+            </tr>
+        </table>
+    </div>
+    
+    {% if error_details.context %}
+    <div class="section">
+        <h2>Context Information</h2>
+        <pre>{{ error_details.context|tojson(indent=2) }}</pre>
+    </div>
+    {% endif %}
+    
+    <div class="section">
+        <h2>Traceback</h2>
+        <pre>{{ error_details.traceback }}</pre>
+    </div>
+    
+    <div class="section info">
+        <p><strong>Note:</strong> This is an automated error notification from your Flask application.</p>
+        <p>Application: {{ config.get('APP_NAME', 'Flask Application') }}</p>
+        <p>Environment: {{ config.get('ENV', 'Production') }}</p>
+    </div>
+</body>
+</html>
