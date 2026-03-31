@@ -7,3 +7,5 @@ logs/
 instance/
 .ipc.sock
 .DS_Store
+http_ca.crt
+migrations/
